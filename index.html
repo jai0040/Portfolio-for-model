@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandra Chen - Model Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">Alexandra Chen</div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Alexandra Chen</h1>
+                <p class="hero-subtitle">Professional Model & Creative Artist</p>
+                <div class="hero-description">
+                    <p>Bringing elegance and sophistication to every frame. Specializing in fashion, editorial, and commercial modeling with over 5 years of experience.</p>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('portfolio')">View Portfolio</button>
+                    <button class="btn-secondary" onclick="scrollToSection('contact')">Get in Touch</button>
+                </div>
+                <div class="booking-status">
+                    <div class="status-indicator"></div>
+                    <span class="status-text">Available for Bookings</span>
+                    <span class="next-available">Next available: January 2025</span>
+                    <button class="btn-availability" onclick="openAvailabilityModal()">Check Available Dates</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1200&fit=crop&crop=face" alt="Alexandra Chen" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Featured Work -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item large">
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=800&fit=crop" alt="Fashion Editorial">
+                    <div class="portfolio-overlay">
+                        <h3>Vogue Editorial</h3>
+                        <p>Fashion Photography</p>
+                        <span class="photographer">by Marcus Johnson</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=600&fit=crop" alt="Commercial Shoot">
+                    <div class="portfolio-overlay">
+                        <h3>Luxury Brand Campaign</h3>
+                        <p>Commercial</p>
+                        <span class="photographer">by Sarah Williams</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop" alt="Portrait Session">
+                    <div class="portfolio-overlay">
+                        <h3>Beauty Portrait</h3>
+                        <p>Studio Photography</p>
+                        <span class="photographer">by David Chen</span>
+                    </div>
+                </div>
+                <div class="portfolio-item wide">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=400&fit=crop" alt="Runway Show">
+                    <div class="portfolio-overlay">
+                        <h3>Paris Fashion Week</h3>
+                        <p>Runway</p>
+                        <span class="photographer">by Fashion Week Official</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=600&fit=crop" alt="Lifestyle Shoot">
+                    <div class="portfolio-overlay">
+                        <h3>Lifestyle Campaign</h3>
+                        <p>Commercial</p>
+                        <span class="photographer">by Emma Rodriguez</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Alexandra</h2>
+                    <p class="about-description">
+                        With over 5 years in the modeling industry, I bring professionalism, creativity, and passion to every project. My experience spans fashion editorials, commercial campaigns, and runway shows for top brands worldwide.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Brands Worked With</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Magazine Features</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=600&fit=crop" alt="Alexandra Chen Portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services & Specialties</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('fashion')">
+                    <div class="service-icon">👗</div>
+                    <h3>Fashion Modeling</h3>
+                    <p>Editorial shoots, lookbooks, and fashion campaigns</p>
+                    <div class="service-price">From $500/day</div>
+                </div>
+                <div class="service-card" onclick="openModal('commercial')">
+                    <div class="service-icon">📸</div>
+                    <h3>Commercial Modeling</h3>
+                    <p>Brand campaigns, product photography, and advertising</p>
+                    <div class="service-price">From $800/day</div>
+                </div>
+                <div class="service-card" onclick="openModal('runway')">
+                    <div class="service-icon">✨</div>
+                    <h3>Runway Modeling</h3>
+                    <p>Fashion shows, presentations, and runway events</p>
+                    <div class="service-price">From $300/show</div>
+                </div>
+                <div class="service-card" onclick="openModal('portrait')">
+                    <div class="service-icon">🎭</div>
+                    <h3>Portrait Sessions</h3>
+                    <p>Headshots, beauty photography, and personal branding</p>
+                    <div class="service-price">From $400/session</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Alexandra brought incredible energy and professionalism to our campaign. Her ability to embody our brand vision was remarkable."</p>
+                    <div class="testimonial-author">- Sarah Johnson, Creative Director at Luxe Fashion</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Working with Alexandra was a dream. She's punctual, creative, and delivers stunning results every time."</p>
+                    <div class="testimonial-author">- Marcus Chen, Fashion Photographer</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Alexandra's versatility and professionalism make her our go-to model for all major campaigns."</p>
+                    <div class="testimonial-author">- Emma Rodriguez, Brand Manager</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>Ready to create something amazing? I'm available for bookings and collaborations worldwide.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Email:</strong> alexandra@modelportfolio.com
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone:</strong> +1 (555) 123-4567
+                        </div>
+                        <div class="contact-item">
+                            <strong>Location:</strong> New York, NY (Travel Available)
+                        </div>
+                    </div>
+                    <button class="btn-primary" onclick="downloadPortfolio()">Download Portfolio PDF</button>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Project Type">
+                        <textarea placeholder="Tell me about your project" rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Contact Button -->
+    <div class="floating-contact" onclick="scrollToSection('contact')">
+        <span>💬</span>
+    </div>
+
+    <!-- Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Availability Modal -->
+    <div id="availabilityModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeAvailabilityModal()">&times;</span>
+        <h3>Available Dates</h3>
+        <ul class="available-dates-list">
+          <li>January 10, 2025</li>
+          <li>January 15, 2025</li>
+          <li>January 22, 2025</li>
+          <li>February 5, 2025</li>
+          <li>February 18, 2025</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
