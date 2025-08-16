@@ -53,45 +53,78 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="section-title">Featured Work</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item large">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=800&fit=crop" alt="Fashion Editorial">
-                    <div class="portfolio-overlay">
-                        <h3>Vogue Editorial</h3>
-                        <p>Fashion Photography</p>
-                        <span class="photographer">by Marcus Johnson</span>
+            <div class="album-cards-rows">
+                <!-- Row 1: 3 Portrait Albums -->
+                <div class="album-row">
+                    <div class="album-card" data-album="portrait1">
+                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=800&fit=crop" alt="Portrait 1" class="album-cover">
+                        <div class="album-info">
+                            <h3>Portrait 1</h3>
+                            <p>Studio Portrait</p>
+                            <button class="btn-primary" onclick="openAlbumModal('portrait1', 0)">View Album</button>
+                        </div>
+                    </div>
+                    <div class="album-card" data-album="portrait2">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=800&fit=crop" alt="Portrait 2" class="album-cover">
+                        <div class="album-info">
+                            <h3>Portrait 2</h3>
+                            <p>Studio Portrait</p>
+                            <button class="btn-primary" onclick="openAlbumModal('portrait2', 0)">View Album</button>
+                        </div>
+                    </div>
+                    <div class="album-card" data-album="portrait3">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&h=800&fit=crop" alt="Portrait 3" class="album-cover">
+                        <div class="album-info">
+                            <h3>Portrait 3</h3>
+                            <p>Studio Portrait</p>
+                            <button class="btn-primary" onclick="openAlbumModal('portrait3', 0)">View Album</button>
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=600&fit=crop" alt="Commercial Shoot">
-                    <div class="portfolio-overlay">
-                        <h3>Luxury Brand Campaign</h3>
-                        <p>Commercial</p>
-                        <span class="photographer">by Sarah Williams</span>
+                <!-- Row 2: 2 Landscape Albums -->
+                <div class="album-row">
+                    <div class="album-card landscape" data-album="citylife">
+                        <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=700&h=350&fit=crop" alt="City Life" class="album-cover-landscape">
+                        <div class="album-info">
+                            <h3>City Life</h3>
+                            <p>Urban Editorial</p>
+                            <button class="btn-primary" onclick="openAlbumModal('citylife', 0)">View Album</button>
+                        </div>
+                    </div>
+                    <div class="album-card landscape" data-album="beachvibes">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&h=350&fit=crop" alt="Beach Vibes" class="album-cover-landscape">
+                        <div class="album-info">
+                            <h3>Beach Vibes</h3>
+                            <p>Resort Campaign</p>
+                            <button class="btn-primary" onclick="openAlbumModal('beachvibes', 0)">View Album</button>
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop" alt="Portrait Session">
-                    <div class="portfolio-overlay">
-                        <h3>Beauty Portrait</h3>
-                        <p>Studio Photography</p>
-                        <span class="photographer">by David Chen</span>
+                <!-- Row 3: 3 Portrait Albums -->
+                <div class="album-row">
+                    <div class="album-card" data-album="portrait4">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&h=600&fit=crop" alt="Portrait 4" class="album-cover">
+                        <div class="album-info">
+                            <h3>Portrait 4</h3>
+                            <p>Studio Portrait</p>
+                            <button class="btn-primary" onclick="openAlbumModal('portrait4', 0)">View Album</button>
+                        </div>
                     </div>
-                </div>
-                <div class="portfolio-item wide">
-                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=400&fit=crop" alt="Runway Show">
-                    <div class="portfolio-overlay">
-                        <h3>Paris Fashion Week</h3>
-                        <p>Runway</p>
-                        <span class="photographer">by Fashion Week Official</span>
+                    <div class="album-card" data-album="portrait5">
+                        <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?w=400&h=600&fit=crop" alt="Portrait 5" class="album-cover">
+                        <div class="album-info">
+                            <h3>Portrait 5</h3>
+                            <p>Studio Portrait</p>
+                            <button class="btn-primary" onclick="openAlbumModal('portrait5', 0)">View Album</button>
+                        </div>
                     </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=600&fit=crop" alt="Lifestyle Shoot">
-                    <div class="portfolio-overlay">
-                        <h3>Lifestyle Campaign</h3>
-                        <p>Commercial</p>
-                        <span class="photographer">by Emma Rodriguez</span>
+                    <div class="album-card" data-album="portrait6">
+                        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400&h=600&fit=crop" alt="Portrait 6" class="album-cover">
+                        <div class="album-info">
+                            <h3>Portrait 6</h3>
+                            <p>Studio Portrait</p>
+                            <button class="btn-primary" onclick="openAlbumModal('portrait6', 0)">View Album</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -245,6 +278,18 @@
           <li>February 5, 2025</li>
           <li>February 18, 2025</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Album Modal -->
+    <div id="albumModal" class="modal">
+      <div class="modal-content album-modal-content">
+        <span class="close" onclick="closeAlbumModal()">&times;</span>
+        <div id="albumPhotos"></div>
+        <div class="album-modal-nav">
+          <button id="prevPhoto" onclick="prevAlbumPhoto()">&#8592; Prev</button>
+          <button id="nextPhoto" onclick="nextAlbumPhoto()">Next &#8594;</button>
+        </div>
       </div>
     </div>
 

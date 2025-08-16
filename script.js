@@ -224,3 +224,93 @@ function openAvailabilityModal() {
 function closeAvailabilityModal() { 
   document.getElementById('availabilityModal').style.display = 'none';
 }
+
+const albumData = {
+  portrait1: [
+    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=800&fit=crop",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=800&fit=crop"
+  ],
+  portrait2: [
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=800&fit=crop",
+    "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&h=800&fit=crop"
+  ],
+  portrait3: [
+    "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&h=800&fit=crop",
+    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=800&fit=crop"
+  ],
+  citylife: [
+    "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?w=700&h=350&fit=crop",
+    "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=700&h=350&fit=crop"
+  ],
+  beachvibes: [
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=700&h=350&fit=crop",
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&h=350&fit=crop"
+  ],
+  portrait4: [
+    "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?w=400&h=600&fit=crop"
+  ],
+  portrait5: [
+    "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?w=400&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400&h=600&fit=crop"
+  ],
+  portrait6: [
+    "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&h=600&fit=crop"
+  ]
+};
+
+let currentAlbum = null;
+let currentPhotoIndex = 0;
+
+document.querySelectorAll('.portfolio-item.album').forEach(item => {
+  item.addEventListener('click', function() {
+    const album = this.getAttribute('data-album');
+    openAlbumModal(album, 0);
+  });
+});
+
+function openAlbumModal(album, index) {
+  currentAlbum = album;
+  currentPhotoIndex = index;
+  const albumPhotos = albumData[album];
+  if (!albumPhotos) return;
+  document.getElementById('albumModal').style.display = 'block';
+  showAlbumPhoto();
+}
+
+function closeAlbumModal() {
+  document.getElementById('albumModal').style.display = 'none';
+}
+
+function showAlbumPhoto() {
+  const albumPhotos = albumData[currentAlbum];
+  const photoUrl = albumPhotos[currentPhotoIndex];
+  document.getElementById('albumPhotos').innerHTML = `
+    <img src="${photoUrl}" alt="Album Photo" style="max-width:100%;max-height:60vh;display:block;margin:0 auto;">
+    <div style="text-align:center;margin-top:1rem;">Photo ${currentPhotoIndex + 1} of ${albumPhotos.length}</div>
+  `;
+}
+
+function prevAlbumPhoto() {
+  if (currentPhotoIndex > 0) {
+    currentPhotoIndex--;
+    showAlbumPhoto();
+  }
+}
+
+function nextAlbumPhoto() {
+  const albumPhotos = albumData[currentAlbum];
+  if (currentPhotoIndex < albumPhotos.length - 1) {
+    currentPhotoIndex++;
+    showAlbumPhoto();
+  }
+}
+
+// Optional: Close modal on outside click
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById('albumModal');
+  if (event.target === modal) {
+    closeAlbumModal();
+  }
+});
